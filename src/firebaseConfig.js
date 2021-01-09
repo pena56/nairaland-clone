@@ -14,6 +14,10 @@ const myApp = firebase.initializeApp(firebaseConfig);
 
 export const db = myApp.firestore();
 
+export const auth = myApp.auth();
+
+export const storage = myApp.storage();
+
 // export const uploadForum = (forum) => {
 //   forum.map((subforum) => {
 //     db.collection('Forums')
