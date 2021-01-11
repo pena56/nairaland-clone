@@ -76,8 +76,6 @@ function SignUp() {
         setLoading((prev) => !prev);
       });
 
-    // setEmail('');
-    // setPassword('');
     e.preventDefault();
   };
 
