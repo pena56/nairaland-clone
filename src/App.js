@@ -1,17 +1,21 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import './App.css';
+import SignUp from './pages/SignUp';
+import Profile from './pages/Profile';
+import SignIn from './pages/SignIn';
+import Home from './pages/Home';
+import ForgotPassword from './pages/ForgotPassword';
+import UpdateProfile from './pages/UpdateProfile';
 
-import SignUp from './components/SignUp/SignUp';
-import Profile from './components/Profile/Profile';
-import SignIn from './components/SignIn/SignIn.js';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 import { AuthProvider } from './contexts/AuthContext';
 import { MenuToggleProvider } from './contexts/MenuToggleContext';
-import PrivateRoute from './components/PrivateRoute';
-import ForgotPassword from './components/ForgotPassword/ForgotPassword';
-import UpdateProfile from './components/UpdateProfile/UpdateProfile';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+
+import PrivateRoute from './utils/PrivateRoute';
+
+import './App.css';
 
 function App() {
   return (
@@ -21,10 +25,11 @@ function App() {
           <MenuToggleProvider>
             <Header />
             <Switch>
-              <Route exact path="/" component={Profile} />
+              <Route exact path="/" component={Home} />
               <Route path="/signup" component={SignUp} />
               <Route path="/signin" component={SignIn} />
               <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="/user/:displayName" component={Profile} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
             </Switch>
             <Footer />

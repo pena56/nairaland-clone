@@ -2,13 +2,18 @@ import { Link } from 'react-router-dom';
 
 import { useRef, useState } from 'react';
 
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
+
+import ErrorMessage from '../utils/ErrorMessage';
+
+import '../styles/authForm.css';
 
 function ForgotPassword() {
-  const emailRef = useRef();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+
+  const emailRef = useRef();
 
   const { resetPassword } = useAuth();
 
@@ -28,17 +33,17 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="signin">
-      <h3 className="signin__header">Reset Password</h3>
-      <form className="signin__form" onSubmit={handleSubmit}>
-        {error && <p>{error}</p>}
+    <div className="authForm">
+      <h3 className="authForm__header">Reset Password</h3>
+      <form className="authForm__body" onSubmit={handleSubmit}>
+        {error && <ErrorMessage message={error} />}
         {message && <p>{message}</p>}
         <input ref={emailRef} type="email" placeholder="Email" />
         <button disabled={loading} type="submit">
           Reset Password
         </button>
       </form>
-      <div className="signin__footer">
+      <div className="authForm__footer">
         <Link to="/signin">Sign In</Link>
       </div>
     </div>

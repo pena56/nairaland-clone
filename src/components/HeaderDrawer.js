@@ -1,12 +1,15 @@
 import { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import { AiOutlineLeft } from 'react-icons/ai';
 import { BiUserCircle } from 'react-icons/bi';
-import { Link, useHistory } from 'react-router-dom';
 
-import drawerBg from '../../img/drawer-bg.jpg';
-import { useAuth } from '../../contexts/AuthContext';
-import { useMenuToggle } from '../../contexts/MenuToggleContext';
+import { useAuth } from '../contexts/AuthContext';
+import { useMenuToggle } from '../contexts/MenuToggleContext';
+
+import ErrorMessage from '../utils/ErrorMessage';
+
+import drawerBg from '../img/drawer-bg.jpg';
 
 function HeaderDrawer() {
   const { currentUser, logout } = useAuth();
@@ -30,6 +33,7 @@ function HeaderDrawer() {
 
   return (
     <div className={`drawer__container ${menuState ? 'show' : 'notShow'}`}>
+      {error && <ErrorMessage message={error} />}
       <div
         className={`drawer ${menuState ? 'show' : 'notShow'}`}
         style={{
@@ -48,7 +52,7 @@ function HeaderDrawer() {
             className="header__profile"
           />
         ) : (
-          <Link className="drawer__header" to="/signin">
+          <Link onClick={toggleMenu} className="drawer__header" to="/signin">
             <BiUserCircle className="drawer__header-icon" />
             Login
           </Link>

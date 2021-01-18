@@ -1,0 +1,16 @@
+.loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b2412;
+  color: #fff;
+  gap: 5px;
+}
+
+.loading > p {
+  font-size: 1.1rem;
+}

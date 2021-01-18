@@ -1,20 +1,23 @@
+import { useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import ReactLoading from 'react-loading';
 
-import { useRef, useState } from 'react';
+import { useAuth } from '../contexts/AuthContext';
 
-import './SignIn.css';
-import { useAuth } from '../../contexts/AuthContext';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import ErrorMessage from '../utils/ErrorMessage';
+
+import '../styles/authForm.css';
 
 function SignIn() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const { signin } = useAuth();
+
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,9 +35,9 @@ function SignIn() {
   };
 
   return (
-    <div className="signin">
-      <h3 className="signin__header">Sign In</h3>
-      <form onSubmit={handleSubmit} className="signin__form">
+    <div className="authForm">
+      <h3 className="authForm__header">Sign In</h3>
+      <form onSubmit={handleSubmit} className="authForm__body">
         {error && <ErrorMessage message={error} />}
         <input ref={emailRef} type="email" placeholder="Email" />
         <input ref={passwordRef} type="password" placeholder="Password" />
@@ -47,7 +50,7 @@ function SignIn() {
           )}
         </button>
       </form>
-      <div className="signin__footer">
+      <div className="authForm__footer">
         <p>Don't have an account?</p>
         <Link to="/signup">Sign Up</Link>
       </div>

@@ -1,16 +1,16 @@
-.signin {
+.authForm {
   margin-top: 60px;
   box-sizing: border-box;
   padding: 20px;
 }
 
-.signin__header {
+.authForm__header {
   text-align: center;
   font-size: 1.7rem;
   padding: 20px;
 }
 
-.signin__form {
+.authForm__body {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -19,22 +19,22 @@
   margin-bottom: 60px;
 }
 
-.signin__form > input {
+.authForm__body > input {
   background-color: #e5e5e5;
   color: #000;
   font-size: 1.1rem;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #0b2412;
   padding: 15px 20px;
   width: 90%;
   border-radius: 10px;
 }
 
-.signin__form > input:focus {
-  border: 1px solid #0b2412;
+.authForm__body > input:focus {
+  border: 1px solid #38b55b;
   outline: none;
 }
 
-.signin__form > button {
+.authForm__body > button {
   width: 100%;
   padding: 15px;
   border: none;
@@ -47,7 +47,7 @@
   box-sizing: border-box;
 }
 
-.signin__form > a {
+.authForm__body > a {
   text-decoration: none;
   color: rgb(83, 82, 82);
   align-self: flex-start;
@@ -55,7 +55,7 @@
   border-bottom: 1px solid rgb(83, 82, 82);
 }
 
-.signin__footer {
+.authForm__footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -63,12 +63,12 @@
   padding: 15px;
 }
 
-.signin__footer > p {
+.authForm__footer > p {
   align-self: flex-start;
   color: rgb(83, 82, 82);
 }
 
-.signin__footer > a {
+.authForm__footer > a {
   text-decoration: none;
   width: 100%;
   padding: 10px;
