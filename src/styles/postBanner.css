@@ -1,0 +1,25 @@
+.postBanner {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.postBanner__header {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.postBanner__header > p {
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.active__header {
+  border-bottom: 3px solid #0b2412;
+}

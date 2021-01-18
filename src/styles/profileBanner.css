@@ -1,0 +1,159 @@
+.profileBanner {
+  margin-top: 70px;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileBanner__header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 150px;
+  position: relative;
+  margin-bottom: 65px;
+}
+
+.profileBanner__cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileBanner__actions {
+  position: absolute;
+  padding: 10px 20px;
+  bottom: -60%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profileBanner__image-container {
+  min-width: 130px;
+  max-width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  padding: 3px;
+  display: flex;
+}
+
+.profileBanner__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileCover__edit-container {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  padding: 5px;
+  background-color: #fff;
+  margin: 10px;
+  max-width: 25px;
+  border-radius: 50%;
+}
+
+.profile__edit-icon {
+  font-size: 1.5rem;
+  color: #0b2412;
+}
+
+.profileImage__edit-container {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.profileBanner__links {
+  align-self: flex-end;
+  margin-bottom: 30px;
+}
+
+.profileBanner__links > a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #0b2412;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.profileBanner__links > button {
+  padding: 10px 20px;
+  background-color: #0b2412;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.profileBanner__details {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px;
+  margin-top: 10px;
+}
+
+.profileBanner__details-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.profileBanner__details-signature {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: gray;
+  margin-top: -5px;
+}
+
+.profileBanner__details-bio {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.profileBanner__details-misc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.profileBanner__details-misc > p {
+  font-weight: 500;
+  color: gray;
+}
+
+.profileBanner__details-misc > p > a {
+  color: #0b2412;
+}
+
+.profileBanner__details-following {
+  display: flex;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: gray;
+}
+
+.profileBanner__details-following > p > span {
+  color: #000;
+}
